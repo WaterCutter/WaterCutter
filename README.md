@@ -1,16 +1,29 @@
-## Hi there 👋
+# Haoyang He · CPU & Memory Subsystem Validation
 
-<!--
-**WaterCutter/WaterCutter** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Embedded Software Engineer → **SoC System Validation Engineer**
 
-Here are some ideas to get you started:
+Focusing on **server-class SoC validation**, with deep expertise in CPU core microarchitecture, memory consistency, and reliability features. Currently validating **ARM Neoverse-based** systems, bridging pre-silicon architecture concepts with post-silicon hardware reality.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### Core Validation Domains
+- **CPU Core & Microarchitecture**
+  - ARMv8/v9 execution pipeline analysis, PMU-based performance profiling, and HPC kernel optimization using **ARM ACL**.
+  - Instruction semantics validation and barrier instruction behavior (DMB/DSB) under multi-core workloads.
+
+- **Cache Coherency & Interconnect**
+  - CHI/CMN interconnect protocol validation using **Litmus tests** and **Cache Maintenance Operations (CMOs)**.
+  - Coherency stress testing across multi-cluster topologies; root-causing cache-line contention and memory ordering violations.
+
+- **DDR Subsystem & RAS**
+  - DDRC initialization, training, and high-throughput memory stress validation.
+  - **Reliability, Availability, and Serviceability (RAS)**: ECC injection, memory scrubbing, poison consumption handling, and error logging per ARM RAS extensions.
+
+- **System-Level Debug**
+  - Low-level debug using JTAG, logic analyzers, and trace infrastructure.
+  - Root-cause analysis of subtle HW/SW interaction bugs: timing races, coherency protocol edge cases, and RAS corner cases.
+
+### Background
+Previously built full-stack embedded software stacks (Bootloader → RTOS → Linux) and led silicon bring-up for ARM/RISC-V platforms. That foundation now supports rigorous system-level validation of high-performance, safety-critical SoCs.
+
+**Tech Stack**: ARM Neoverse, ARMv8/v9, CHI/CMN, DDRC, RAS (ECC/Scrub/Poison), Litmus, CMO, PMU, ARM ACL, U-Boot, FreeRTOS, Linux, C/C++, Assembly, JTAG.
+
+📫 **Contact**: hehaoyang315@163.com
