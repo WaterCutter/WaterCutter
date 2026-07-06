@@ -27,3 +27,23 @@ Previously built full-stack embedded software stacks (Bootloader → RTOS → Li
 **Tech Stack**: ARM Neoverse, ARMv8/v9, CHI/CMN, DDRC, RAS (ECC/Scrub/Poison), Litmus, CMO, PMU, ARM ACL, U-Boot, FreeRTOS, Linux, C/C++, Assembly, JTAG.
 
 📫 **Contact**: hehaoyang315@163.com
+
+**Dlog**
+
+```markdown
+├── 📁 notes/
+│   ├── 📁 methdology/
+│   │   └── 📁 memory_system_consistency_validation/
+│   │       └── [arm_soc_cmn_consistency_validation.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_cmn_consistency_validation.md)
+│   └── 📁 microarchitecture/
+│       └── 📁 cmn/
+│           └── 📁 why_rnf_no_cmo/
+│               └── [why_rnf_no_cmo.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/microarchitecture/cmn/why_rnf_no_cmo/why_rnf_no_cmo.md)
+├── 📁 reports/
+│   └── 📁 rca/
+│       ├── 📁 cmn700_ap_scp_cache_coherency_issue/
+│       │   └── [cmn700_ap_scp_cache_coherency_issue.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/cmn700_ap_scp_cache_coherency_issue/cmn700_ap_scp_cache_coherency_issue.md)
+│       └── 📁 ldrd_non_atomic_cause_issue/
+│           └── [ldrd_non_atomic_cause_issue_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/ldrd_non_atomic_cause_issue/ldrd_non_atomic_cause_issue_en.md)
+└── [template_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/template_en.md)
+```
