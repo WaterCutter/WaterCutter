@@ -31,19 +31,25 @@ Previously built full-stack embedded software stacks (Bootloader → RTOS → Li
 **Dlog**
 
 ```markdown
-├── 📁 notes/
-│   ├── 📁 methdology/
-│   │   └── 📁 memory_system_consistency_validation/
-│   │       └── [arm_soc_cmn_consistency_validation.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_cmn_consistency_validation.md)
-│   └── 📁 microarchitecture/
-│       └── 📁 cmn/
-│           └── 📁 why_rnf_no_cmo/
-│               └── [why_rnf_no_cmo.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/microarchitecture/cmn/why_rnf_no_cmo/why_rnf_no_cmo.md)
-├── 📁 reports/
-│   └── 📁 rca/
-│       ├── 📁 cmn700_ap_scp_cache_coherency_issue/
-│       │   └── [cmn700_ap_scp_cache_coherency_issue.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/cmn700_ap_scp_cache_coherency_issue/cmn700_ap_scp_cache_coherency_issue.md)
-│       └── 📁 ldrd_non_atomic_cause_issue/
-│           └── [ldrd_non_atomic_cause_issue_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/ldrd_non_atomic_cause_issue/ldrd_non_atomic_cause_issue_en.md)
-└── [template_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/template_en.md)
+
+- 📄 [template_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/template_en.md) — Issue 报告模板
+
+### notes/ — 技术笔记
+
+- **methdology/** — 方法论
+  - [arm_soc_cmn_consistency_validation.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_cmn_consistency_validation.md)  
+    ARM SoC CMN‑700 一致性用例 × Litmus 映射方法论 & CXL 3.x 硅前回归最小充分用例集（MSS）
+
+- **microarchitecture/** — 微架构
+  - **cmn/** — CMN 互连
+    - [why_rnf_no_cmo.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/microarchitecture/cmn/why_rnf_no_cmo/why_rnf_no_cmo.md)  
+      为什么两个 RN‑F（AP Core）之间不需要手动 CMO —— 从 MOESI、CHI 到 CMN 的一致性视角
+
+### reports/rca/ — 根因分析报告
+
+- [cmn700_ap_scp_cache_coherency_issue.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/cmn700_ap_scp_cache_coherency_issue/cmn700_ap_scp_cache_coherency_issue.md)  
+  ARM CMN‑700 中 AP（Neoverse NX）写 DDR 后 SCP（Cortex‑M7）通过 SNI 读取不到最新数据，需手动 CMO 才能读到
+
+- [ldrd_non_atomic_cause_issue_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/ldrd_non_atomic_cause_issue/ldrd_non_atomic_cause_issue_en.md)  
+  LDRD Non‑Atomic Read Causes Repeated Interrupt Triggering（Cortex‑M7 上 LDRD 非原子读引发中断风暴）
 ```
