@@ -1,8 +1,8 @@
 # WaterCutter · CPU & Memory Subsystem Validation
 
-**Embedded Software Engineer → SoC System Validation Engineer**
+**Embedded Software Engineer & SoC System Validation Expert**
 
-Focusing on **server-class SoC validation**, with deep expertise in CPU core microarchitecture, memory consistency, and reliability features. Currently validating **ARM Neoverse-based** systems, bridging pre-silicon architecture concepts with post-silicon hardware reality.
+Focusing on **server-class SoC validation**, with deep expertise in CPU core microarchitecture, memory consistency, and RAS features. Currently validating **ARM Neoverse-based** systems, bridging pre-silicon architecture concepts with post-silicon hardware reality.
 
 ---
 
