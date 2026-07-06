@@ -1,10 +1,13 @@
-# Haoyang He · CPU & Memory Subsystem Validation
+# WaterCutter · CPU & Memory Subsystem Validation
 
-Embedded Software Engineer → **SoC System Validation Engineer**
+**Embedded Software Engineer → SoC System Validation Engineer**
 
 Focusing on **server-class SoC validation**, with deep expertise in CPU core microarchitecture, memory consistency, and reliability features. Currently validating **ARM Neoverse-based** systems, bridging pre-silicon architecture concepts with post-silicon hardware reality.
 
+---
+
 ### Core Validation Domains
+
 - **CPU Core & Microarchitecture**
   - ARMv8/v9 execution pipeline analysis, PMU-based performance profiling, and HPC kernel optimization using **ARM ACL**.
   - Instruction semantics validation and barrier instruction behavior (DMB/DSB) under multi-core workloads.
@@ -21,35 +24,54 @@ Focusing on **server-class SoC validation**, with deep expertise in CPU core mic
   - Low-level debug using JTAG, logic analyzers, and trace infrastructure.
   - Root-cause analysis of subtle HW/SW interaction bugs: timing races, coherency protocol edge cases, and RAS corner cases.
 
+---
+
 ### Background
+
 Previously built full-stack embedded software stacks (Bootloader → RTOS → Linux) and led silicon bring-up for ARM/RISC-V platforms. That foundation now supports rigorous system-level validation of high-performance, safety-critical SoCs.
 
 **Tech Stack**: ARM Neoverse, ARMv8/v9, CHI/CMN, DDRC, RAS (ECC/Scrub/Poison), Litmus, CMO, PMU, ARM ACL, U-Boot, FreeRTOS, Linux, C/C++, Assembly, JTAG.
 
 📫 **Contact**: hehaoyang315@163.com
 
-**Dlog**
+---
 
-```markdown
+## 📂 Dlog · Technical Repository
 
-- 📄 [template_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/template_en.md) — Issue 报告模板
+> Practical documentation distilled from real silicon bugs and architectural validation challenges.  
+> **Repo**: [arm-soc-validation-notes](https://github.com/WaterCutter/arm-soc-validation-notes)
 
-### notes/ — 技术笔记
+---
 
-- **methdology/** — 方法论
-  - [arm_soc_cmn_consistency_validation.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_cmn_consistency_validation.md)  
-    ARM SoC CMN‑700 一致性用例 × Litmus 映射方法论 & CXL 3.x 硅前回归最小充分用例集（MSS）
+### 📄 Issue Template
 
-- **microarchitecture/** — 微架构
-  - **cmn/** — CMN 互连
-    - [why_rnf_no_cmo.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/microarchitecture/cmn/why_rnf_no_cmo/why_rnf_no_cmo.md)  
-      为什么两个 RN‑F（AP Core）之间不需要手动 CMO —— 从 MOESI、CHI 到 CMN 的一致性视角
+- [SoC Validation Issue Report Template (EN)](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/template_en.md)  
+  Standardized template for reporting and tracking SoC validation issues — covers symptom description, repro steps, logs, root cause, and fix verification.
 
-### reports/rca/ — 根因分析报告
+---
 
-- [cmn700_ap_scp_cache_coherency_issue.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/cmn700_ap_scp_cache_coherency_issue/cmn700_ap_scp_cache_coherency_issue.md)  
-  ARM CMN‑700 中 AP（Neoverse NX）写 DDR 后 SCP（Cortex‑M7）通过 SNI 读取不到最新数据，需手动 CMO 才能读到
+### 📝 Notes · Methodology & Microarchitecture
 
-- [ldrd_non_atomic_cause_issue_en.md](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/ldrd_non_atomic_cause_issue/ldrd_non_atomic_cause_issue_en.md)  
-  LDRD Non‑Atomic Read Causes Repeated Interrupt Triggering（Cortex‑M7 上 LDRD 非原子读引发中断风暴）
-```
+#### `notes/methdology/` — Validation Methodology
+
+- **[ARM SoC CMN-700 Consistency Validation × Litmus Mapping](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_cmn_consistency_validation.md)**  
+  Defines the coverage boundary of Litmus tests in CMN validation; establishes a **Minimum Sufficient Set (MSS)** (~20 tests) for pre-silicon regression covering CMN-700 + CXL 3.x scenarios.
+
+#### `notes/microarchitecture/cmn/` — CMN Interconnect Deep Dives
+
+- **[Why No Manual CMO Is Required Between Two RN-F (AP Cores)](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/microarchitecture/cmn/why_rnf_no_cmo/why_rnf_no_cmo.md)**  
+  Explains automatic coherency maintenance between RN-F nodes through MOESI state machines, CHI protocols, and CMN SAM configurations — correcting the misconception that "DDR always holds the latest data."
+
+---
+
+### 🔬 Reports · Root Cause Analysis (Real Silicon Bugs)
+
+#### `reports/rca/` — Production Bug Postmortems
+
+- **[CMN-700 AP → SCP Cache Coherency Issue](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/cmn700_ap_scp_cache_coherency_issue/cmn700_ap_scp_cache_coherency_issue.md)**  
+  **Symptom**: SCP (Cortex-M7 via SNI) reads stale data after AP (Neoverse NX) writes to DDR.  
+  **Root Cause**: Cross-domain access bypassing the Snoop Filter; resolved via explicit CMOs or Non-Cacheable memory attributes.
+
+- **[LDRD Non-Atomic Read Causes Interrupt Storm (Cortex-M7)](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/reports/rca/ldrd_non_atomic_cause_issue/ldrd_non_atomic_cause_issue_en.md)**  
+  **Symptom**: Repeated interrupt triggering due to non-atomic `LDRD` on Device MMIO with read-to-clear side effects.  
+  **Fix**: Split 64-bit access into two 32-bit loads combined with compiler barriers.
