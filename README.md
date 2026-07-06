@@ -36,21 +36,21 @@ Previously built full-stack embedded software stacks (Bootloader → RTOS → Li
 
 ---
 
-## 📂 Dlog · Technical Repository
+## Dlog · Technical Repository
 
 > Practical documentation distilled from real silicon bugs and architectural validation challenges.  
 > **Repo**: [arm-soc-validation-notes](https://github.com/WaterCutter/arm-soc-validation-notes)
 
 ---
 
-### 📄 Issue Template
+### Issue Template
 
 - [SoC Validation Issue Report Template (EN)](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/template_en.md)  
   Standardized template for reporting and tracking SoC validation issues — covers symptom description, repro steps, logs, root cause, and fix verification.
 
 ---
 
-### 📝 Notes · Methodology & Microarchitecture
+### Notes · Methodology & Microarchitecture
 
 #### `notes/methdology/` — Validation Methodology
 
@@ -64,7 +64,7 @@ Previously built full-stack embedded software stacks (Bootloader → RTOS → Li
 
 ---
 
-### 🔬 Reports · Root Cause Analysis (Real Silicon Bugs)
+### Reports · Root Cause Analysis (Real Silicon Bugs)
 
 #### `reports/rca/` — Production Bug Postmortems
 
