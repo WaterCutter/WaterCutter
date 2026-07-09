@@ -54,8 +54,8 @@ Previously built full-stack embedded software stacks (Bootloader → RTOS → Li
 
 #### `notes/methdology/` — Validation Methodology
 
-- **[ARM SoC CMN-700 Consistency Validation × Litmus Mapping](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_cmn_consistency_validation.md)**  
-  Defines the coverage boundary of Litmus tests in CMN validation; establishes a **Minimum Sufficient Set (MSS)** (~20 tests) for pre-silicon regression covering CMN-700 + CXL 3.x scenarios.
+- **[Arm Soc Consistency Validation Methodology](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_consistency_validation_method.md)**  
+   Systematically presents a methodology for sequential consistency verification, covering memory model definitions, formal execution modeling, graph-based violation detection, and engineering implementation through litmus tests and CMO validation.
 
 #### `notes/microarchitecture/cmn/` — CMN Interconnect Deep Dives
 
