@@ -17,7 +17,6 @@ Focusing on **server-class SoC validation**, with deep expertise in CPU core mic
   - Coherency stress testing across multi-cluster topologies; root-causing cache-line contention and memory ordering violations.
 
 - **DDR Subsystem & RAS**
-  - DDRC initialization, training, and high-throughput memory stress validation.
   - **Reliability, Availability, and Serviceability (RAS)**: ECC injection, memory scrubbing, poison consumption handling, and error logging per ARM RAS extensions.
 
 - **System-Level Debug**
@@ -32,7 +31,7 @@ Previously built full-stack embedded software stacks (Bootloader → RTOS → Li
 
 **Tech Stack**: ARM Neoverse, ARMv8/v9, CHI/CMN, DDRC, RAS (ECC/Scrub/Poison), Litmus, CMO, PMU, ARM ACL, U-Boot, FreeRTOS, Linux, C/C++, Assembly, JTAG.
 
-📫 **Contact**: hehaoyang315@163.com
+📫 **Contact**: watercutterx@gmail.com
 
 ---
 
