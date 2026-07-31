@@ -45,7 +45,7 @@ Previously built full-stack embedded software stacks (Bootloader → RTOS → Li
 
 #### `notes/methdology/` — Validation Methodology
 
-- **[Arm Soc Consistency Validation Methodology](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/arm_soc_consistency_validation_method.md)**  
+- **[Arm Soc Consistency Validation Methodology](https://github.com/WaterCutter/arm-soc-validation-notes/blob/master/notes/methdology/memory_system_consistency_validation/sc_validation_methodology.md)**  
    Systematically presents a methodology for sequential consistency verification, covering memory model definitions, formal execution modeling, graph-based violation detection, and engineering implementation through litmus tests and CMO validation.
 
 #### `notes/microarchitecture/cmn/` — CMN Interconnect Deep Dives
